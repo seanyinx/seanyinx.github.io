@@ -5,28 +5,28 @@
     
     <title>Stats Calculator with TDD Part 1 | Agile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="I am going to demonstrate how to complete Stats Calculator with Test Driven Development.Before we start, let’s introduce you the three laws of TDD by Robert Martin.
+    <meta name="description" content="I am going to demonstrate how to complete Stats Calculator with Test Driven Development.Before we start, let me introduce you the three laws of TDD by Robert Martin.
 
-You can’t write any production cod">
+You can’t write any production co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stats Calculator with TDD Part 1">
 <meta property="og:url" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/index.html">
 <meta property="og:site_name" content="Agile">
-<meta property="og:description" content="I am going to demonstrate how to complete Stats Calculator with Test Driven Development.Before we start, let’s introduce you the three laws of TDD by Robert Martin.
+<meta property="og:description" content="I am going to demonstrate how to complete Stats Calculator with Test Driven Development.Before we start, let me introduce you the three laws of TDD by Robert Martin.
 
-You can’t write any production cod">
+You can’t write any production co">
 <meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.1.gif">
 <meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.2.gif">
 <meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.3.gif">
 <meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.4.gif">
 <meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.5.gif">
 <meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.6.gif">
-<meta property="og:updated_time" content="2016-12-21T12:41:44.893Z">
+<meta property="og:updated_time" content="2016-12-21T12:45:08.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stats Calculator with TDD Part 1">
-<meta name="twitter:description" content="I am going to demonstrate how to complete Stats Calculator with Test Driven Development.Before we start, let’s introduce you the three laws of TDD by Robert Martin.
+<meta name="twitter:description" content="I am going to demonstrate how to complete Stats Calculator with Test Driven Development.Before we start, let me introduce you the three laws of TDD by Robert Martin.
 
-You can’t write any production cod">
+You can’t write any production co">
 <meta name="twitter:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.1.gif">
     
 
@@ -265,7 +265,7 @@ You can’t write any production cod">
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>I am going to demonstrate how to complete Stats Calculator with Test Driven Development.<br>Before we start, let’s introduce you the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development" target="_blank" rel="external">three laws of TDD</a> by <a href="https://en.wikipedia.org/wiki/Robert_Cecil_Martin" target="_blank" rel="external">Robert Martin</a>.</p>
+            <p>I am going to demonstrate how to complete Stats Calculator with Test Driven Development.<br>Before we start, let me introduce you the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development" target="_blank" rel="external">three laws of TDD</a> by <a href="https://en.wikipedia.org/wiki/Robert_Cecil_Martin" target="_blank" rel="external">Robert Martin</a>.</p>
 <ol>
 <li>You can’t write any production code until you have first written a failing unit test.</li>
 <li>You can’t write more of a unit test than is sufficient to fail, and not compiling is failing.</li>
@@ -275,13 +275,14 @@ You can’t write any production cod">
 <a id="more"></a>
 <h2 id="Stats-Calculator"><a href="#Stats-Calculator" class="headerlink" title="Stats Calculator"></a>Stats Calculator</h2><p>The details of this kata can be found in the link: <a href="https://github.com/garora/TDD-Katas#calc-stats" target="_blank" rel="external">Calc Stats</a>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Calc Stats:</div><div class="line"></div><div class="line">Your task is to process a sequence of integer numbers</div><div class="line">to determine the following statistics:</div><div class="line"></div><div class="line">o) minimum value</div><div class="line">o) maximum value</div><div class="line">o) number of elements in the sequence</div><div class="line">o) average value</div><div class="line"></div><div class="line">For example: 6, 9, 15, -2, 92, 11</div><div class="line"></div><div class="line">o) minimum value = -2</div><div class="line">o) maximum value = 92</div><div class="line">o) number of elements in the sequence = 6</div><div class="line">o) average value = 18.166666</div></pre></td></tr></table></figure></p>
 <p>Let’s start with finding the minimum value.</p>
-<h3 id="1-Write-the-1st-Failing-Test"><a href="#1-Write-the-1st-Failing-Test" class="headerlink" title="1. Write the 1st Failing Test"></a>1. Write the 1st Failing Test</h3><p>It’s recommended to write the 1st failing test as simple as possible and only partially cover the requirement, since we have no production code to start with.<br>In our case, the simplest case is to find the minimum from a single element.</p>
+<h3 id="1-Write-the-1st-Failing-Test"><a href="#1-Write-the-1st-Failing-Test" class="headerlink" title="1. Write the 1st Failing Test"></a>1. Write the 1st Failing Test</h3><p>It’s recommended to write the 1st failing test as simple as possible and only partially cover the requirement, since we have no production code to start with. In our case, the simplest case is to find the minimum from a single element.</p>
 <p>Make sure you run the failing test case before proceeding with production code, in order to make sure it is effective.<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.1.gif" alt="Write The 1st Failing Test"></p>
 <h3 id="2-Make-the-Test-Pass"><a href="#2-Make-the-Test-Pass" class="headerlink" title="2. Make the Test Pass"></a>2. Make the Test Pass</h3><p>At this moment, our goal is just to make the 1st test case pass. We may have a rough design concept in mind, but we do not just put the entire design to code, since we are not sure if it’s a good one.</p>
 <p>One of the most important practices in Agile is <a href="https://www.agilealliance.org/glossary/simple-design/" target="_blank" rel="external">Simple Design</a>. It’s better to evolve our code gradually by writing the minimum code that make the test cases pass. Let the final solution emerge.<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.2.gif" alt="Make the Test Pass"></p>
 <h3 id="3-Write-a-More-General-Failing-Test"><a href="#3-Write-a-More-General-Failing-Test" class="headerlink" title="3. Write a More General Failing Test"></a>3. Write a More General Failing Test</h3><p>Now we can expand our tests to cover more general cases.<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.3.gif" alt="Write a More General Failing Test"></p>
 <h3 id="4-Satisfy-The-Requirement"><a href="#4-Satisfy-The-Requirement" class="headerlink" title="4. Satisfy The Requirement"></a>4. Satisfy The Requirement</h3><p><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.4.gif" alt="Satisfy The Requirement"></p>
-<h3 id="5-Write-a-Boundary-Test-Case"><a href="#5-Write-a-Boundary-Test-Case" class="headerlink" title="5. Write a Boundary Test Case"></a>5. Write a Boundary Test Case</h3><p>The happy path works fine now, but we have to take care of the boundary case, an empty sequence of integers. There’s nothing much we can do except throwing an exception to tell the caller that something is wrong in this case. It’s a good practice to make sure the exception message is meaningful too, so that the issue can found easily identified in logs.<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.5.gif" alt="Write a Boundary Test Case"></p>
+<h3 id="5-Write-a-Boundary-Test-Case"><a href="#5-Write-a-Boundary-Test-Case" class="headerlink" title="5. Write a Boundary Test Case"></a>5. Write a Boundary Test Case</h3><p>The happy path works fine now, but we have to take care of the boundary case, an empty sequence of integers. There’s nothing much we can do except throwing an exception to tell the caller that something is wrong in this case.</p>
+<p>By the way, it’s a good practice to make sure the exception message is meaningful too, so that the issue can be easily identified in integration tests or logs in production by our support.<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.5.gif" alt="Write a Boundary Test Case"></p>
 <h3 id="6-Implement-the-Boundary-Case"><a href="#6-Implement-the-Boundary-Case" class="headerlink" title="6. Implement the Boundary Case"></a>6. Implement the Boundary Case</h3><p><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.6.gif" alt="Implement the Boundary Case"></p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Now we have seen how we can use TDD to not only fulfill the requirement, but also evolve our solution to a good design.</p>
 <p>A very important lesson here is to start with the simplest test case possible, and gradually improve our code to a better design. It’s very easy to get stuck trying to come up with a perfect solution in the first place.</p>
@@ -296,7 +297,7 @@ You can’t write any production cod">
 
 </div>
 
-    <a data-url="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/" data-id="ciwxl1nol0003y8z7li3n1bso" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/" data-id="ciwyyn5mg0003hoz7612vj5qw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -499,7 +500,10 @@ You can’t write any production cod">
     <div class="outer">
         <div id="footer-info" class="inner">
             &copy; 2016 Sean Yin<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a><br/>
+        </div>
+        <div id="copyright-info" class="inner">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="seanyinx.github.io" property="cc:attributionName" rel="cc:attributionURL">seanyinx</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="seanyinx.github.io" rel="dct:source">seanyinx.github.io</a>.
         </div>
     </div>
 </footer>
