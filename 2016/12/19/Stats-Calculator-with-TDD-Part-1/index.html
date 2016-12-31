@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang=en>
 <head>
     <meta charset="utf-8">
     
     <title>Stats Calculator with TDD Part 1 | Agile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="下面我们来一起通过TDD完成Stats Calculator。在开始前，我们先来看看Robert Martin的three laws of TDD：
+    <meta name="description" content="I am going to demonstrate how to complete Stats Calculator with Test Driven Development.Before we start, let me introduce you the three laws of TDD by Robert Martin.
 
-You can’t write any production code until you have first written a failing unit test. (不能在写完一个失败的测试前，编写任何生产代码)
-You can’t wri">
+You can’t write any production co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stats Calculator with TDD Part 1">
-<meta property="og:url" content="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/index.html">
+<meta property="og:url" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/index.html">
 <meta property="og:site_name" content="Agile">
-<meta property="og:description" content="下面我们来一起通过TDD完成Stats Calculator。在开始前，我们先来看看Robert Martin的three laws of TDD：
+<meta property="og:description" content="I am going to demonstrate how to complete Stats Calculator with Test Driven Development.Before we start, let me introduce you the three laws of TDD by Robert Martin.
 
-You can’t write any production code until you have first written a failing unit test. (不能在写完一个失败的测试前，编写任何生产代码)
-You can’t wri">
-<meta property="og:image" content="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.1.gif">
-<meta property="og:image" content="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.2.gif">
-<meta property="og:image" content="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.3.gif">
-<meta property="og:image" content="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.4.gif">
-<meta property="og:image" content="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.5.gif">
-<meta property="og:image" content="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.6.gif">
-<meta property="og:updated_time" content="2016-12-25T15:33:39.374Z">
+You can’t write any production co">
+<meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.1.gif">
+<meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.2.gif">
+<meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.3.gif">
+<meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.4.gif">
+<meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.5.gif">
+<meta property="og:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.6.gif">
+<meta property="og:updated_time" content="2016-12-31T08:26:30.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stats Calculator with TDD Part 1">
-<meta name="twitter:description" content="下面我们来一起通过TDD完成Stats Calculator。在开始前，我们先来看看Robert Martin的three laws of TDD：
+<meta name="twitter:description" content="I am going to demonstrate how to complete Stats Calculator with Test Driven Development.Before we start, let me introduce you the three laws of TDD by Robert Martin.
 
-You can’t write any production code until you have first written a failing unit test. (不能在写完一个失败的测试前，编写任何生产代码)
-You can’t wri">
-<meta name="twitter:image" content="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.1.gif">
+You can’t write any production co">
+<meta name="twitter:image" content="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.1.gif">
     
 
     
@@ -161,7 +158,7 @@ You can’t wri">
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                3
+                4
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -256,26 +253,28 @@ You can’t wri">
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>下面我们来一起通过TDD完成Stats Calculator。在开始前，我们先来看看<a href="https://en.wikipedia.org/wiki/Robert_Cecil_Martin" target="_blank" rel="external">Robert Martin</a>的<a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development" target="_blank" rel="external">three laws of TDD</a>：</p>
+            <p>I am going to demonstrate how to complete Stats Calculator with Test Driven Development.<br>Before we start, let me introduce you the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development" target="_blank" rel="external">three laws of TDD</a> by <a href="https://en.wikipedia.org/wiki/Robert_Cecil_Martin" target="_blank" rel="external">Robert Martin</a>.</p>
 <ol>
-<li>You can’t write any production code until you have first written a failing unit test. (不能在写完一个失败的测试前，编写任何生产代码)</li>
-<li>You can’t write more of a unit test than is sufficient to fail, and not compiling is failing. (不能编程超过一个失败的测试，不能编译也算失败)</li>
-<li>You can’t write more production code than is sufficient to pass the currently failing unit test. (只能编写足够通过当前失败测试的生产代码)</li>
+<li>You can’t write any production code until you have first written a failing unit test.</li>
+<li>You can’t write more of a unit test than is sufficient to fail, and not compiling is failing.</li>
+<li>You can’t write more production code than is sufficient to pass the currently failing unit test.</li>
 </ol>
-<p>这些法则读起来可能有些不自然，希望我们通过这次练习能更好理解其意义。</p>
+<p>It reads unnatural at first, but I hope you will understand better after reading this post.</p>
 <a id="more"></a>
-<h2 id="Stats-Calculator"><a href="#Stats-Calculator" class="headerlink" title="Stats Calculator"></a>Stats Calculator</h2><p>这道练习题的细节可以在这个链接查看: <a href="https://github.com/garora/TDD-Katas#calc-stats" target="_blank" rel="external">Calc Stats</a>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Calc Stats:</div><div class="line"></div><div class="line">Your task is to process a sequence of integer numbers</div><div class="line">to determine the following statistics:</div><div class="line"></div><div class="line">o) minimum value</div><div class="line">o) maximum value</div><div class="line">o) number of elements in the sequence</div><div class="line">o) average value</div><div class="line"></div><div class="line">For example: 6, 9, 15, -2, 92, 11</div><div class="line"></div><div class="line">o) minimum value = -2</div><div class="line">o) maximum value = 92</div><div class="line">o) number of elements in the sequence = 6</div><div class="line">o) average value = 18.166666</div></pre></td></tr></table></figure></p>
-<p>让我们先从获取最小值开始。</p>
-<h3 id="1-编写第一个失败的测试用例"><a href="#1-编写第一个失败的测试用例" class="headerlink" title="1. 编写第一个失败的测试用例"></a>1. 编写第一个失败的测试用例</h3><p>因为我们此时没有任何生产代码作基础，建议大家在使用TDD编写第一个测试时，从最简单的用例开始，这个用例的场景可以只覆盖需求的部分内容。这里最简单的场景是从一个元素的数列里获取最小值。</p>
-<p>在写完测试后，一定要运行测试，以保证测试有效。<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.1.gif" alt="Write The 1st Failing Test"></p>
-<h3 id="2-让测试通过"><a href="#2-让测试通过" class="headerlink" title="2. 让测试通过"></a>2. 让测试通过</h3><p>此时我们的目标是让上一步的测试通过，我们可能这时有一个大概的思路或设计，但不要一次把整个设计付诸于编码，因为此时的设计未必好。</p>
-<p>敏捷开发里很重要的一个实践是<a href="https://www.agilealliance.org/glossary/simple-design/" target="_blank" rel="external">Simple Design</a>。最好的方式是通过编写最少代码满足测试，让设计逐渐演为最终方案，这样的方案完全以满足当前需求为目的，可能比之前想象的要简单很多。<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.2.gif" alt="Make the Test Pass"></p>
-<h3 id="3-编写更普适的用例"><a href="#3-编写更普适的用例" class="headerlink" title="3. 编写更普适的用例"></a>3. 编写更普适的用例</h3><p><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.3.gif" alt="Write a More General Failing Test"></p>
-<h3 id="4-满足普适的需求"><a href="#4-满足普适的需求" class="headerlink" title="4. 满足普适的需求"></a>4. 满足普适的需求</h3><p><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.4.gif" alt="Satisfy The Requirement"></p>
-<h3 id="5-编写边界用例"><a href="#5-编写边界用例" class="headerlink" title="5. 编写边界用例"></a>5. 编写边界用例</h3><p>现在正常逻辑路径已经完善，但如果传入的数列为空，则会导致异常。此时比较好的做法是提供足够的异常信息，这样在集成测试或上线以后发现问题时，才能尽快定位问题的根源。<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.5.gif" alt="Write a Boundary Test Case"></p>
-<h3 id="6-处理边界场景"><a href="#6-处理边界场景" class="headerlink" title="6. 处理边界场景"></a>6. 处理边界场景</h3><p><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.6.gif" alt="Implement the Boundary Case"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>现在我们对TDD的实施有个初步了解，知道如何满足需求的同时，演进设计。最重要的我们知道如何从最简单的测试用例开始，逐步改进我们的代码设计。</p>
-<p>这里我们只完成了从数列中查找最小值，下一次我们接着完成剩下的需求。</p>
+<h2 id="Stats-Calculator"><a href="#Stats-Calculator" class="headerlink" title="Stats Calculator"></a>Stats Calculator</h2><p>The details of this kata can be found in the link: <a href="https://github.com/garora/TDD-Katas#calc-stats" target="_blank" rel="external">Calc Stats</a>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Calc Stats:</div><div class="line"></div><div class="line">Your task is to process a sequence of integer numbers</div><div class="line">to determine the following statistics:</div><div class="line"></div><div class="line">o) minimum value</div><div class="line">o) maximum value</div><div class="line">o) number of elements in the sequence</div><div class="line">o) average value</div><div class="line"></div><div class="line">For example: 6, 9, 15, -2, 92, 11</div><div class="line"></div><div class="line">o) minimum value = -2</div><div class="line">o) maximum value = 92</div><div class="line">o) number of elements in the sequence = 6</div><div class="line">o) average value = 18.166666</div></pre></td></tr></table></figure></p>
+<p>Let’s start with finding the minimum value.</p>
+<h3 id="1-Write-the-1st-Failing-Test"><a href="#1-Write-the-1st-Failing-Test" class="headerlink" title="1. Write the 1st Failing Test"></a>1. Write the 1st Failing Test</h3><p>It’s recommended to write the 1st failing test as simple as possible and only partially cover the requirement, since we have no production code to start with. In our case, the simplest case is to find the minimum from a single element.</p>
+<p>Make sure you run the failing test case before proceeding with production code, in order to make sure it is effective.<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.1.gif" alt="Write The 1st Failing Test"></p>
+<h3 id="2-Make-the-Test-Pass"><a href="#2-Make-the-Test-Pass" class="headerlink" title="2. Make the Test Pass"></a>2. Make the Test Pass</h3><p>At this moment, our goal is just to make the 1st test case pass. We may have a rough design concept in mind, but we do not just put the entire design to code, since we are not sure if it’s a good one.</p>
+<p>One of the most important practices in Agile is <a href="https://www.agilealliance.org/glossary/simple-design/" target="_blank" rel="external">Simple Design</a>. It’s better to evolve our code gradually by writing the minimum code that make the test cases pass. Let the final solution emerge.<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.2.gif" alt="Make the Test Pass"></p>
+<h3 id="3-Write-a-More-General-Failing-Test"><a href="#3-Write-a-More-General-Failing-Test" class="headerlink" title="3. Write a More General Failing Test"></a>3. Write a More General Failing Test</h3><p>Now we can expand our tests to cover more general cases.<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.3.gif" alt="Write a More General Failing Test"></p>
+<h3 id="4-Satisfy-The-Requirement"><a href="#4-Satisfy-The-Requirement" class="headerlink" title="4. Satisfy The Requirement"></a>4. Satisfy The Requirement</h3><p><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.4.gif" alt="Satisfy The Requirement"></p>
+<h3 id="5-Write-a-Boundary-Test-Case"><a href="#5-Write-a-Boundary-Test-Case" class="headerlink" title="5. Write a Boundary Test Case"></a>5. Write a Boundary Test Case</h3><p>The happy path works fine now, but we have to take care of the boundary case, an empty sequence of integers. There’s nothing much we can do except throwing an exception to tell the caller that something is wrong in this case.</p>
+<p>By the way, it’s a good practice to make sure the exception message is meaningful too, so that the issue can be easily identified in integration tests or logs in production by our support.<br><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.5.gif" alt="Write a Boundary Test Case"></p>
+<h3 id="6-Implement-the-Boundary-Case"><a href="#6-Implement-the-Boundary-Case" class="headerlink" title="6. Implement the Boundary Case"></a>6. Implement the Boundary Case</h3><p><img src="/2016/12/19/Stats-Calculator-with-TDD-Part-1/tdd.stats.calculator.6.gif" alt="Implement the Boundary Case"></p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Now we have seen how we can use TDD to not only fulfill the requirement, but also evolve our solution to a good design.</p>
+<p>A very important lesson here is to start with the simplest test case possible, and gradually improve our code to a better design. It’s very easy to get stuck trying to come up with a perfect solution in the first place.</p>
+<p>We only completed finding the minimum of a sequence of integers today. Next, we will proceed with the rest of the requirements.</p>
 
         
         </div>
@@ -286,7 +285,7 @@ You can’t wri">
 
 </div>
 
-    <a data-url="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/" data-id="cix4tfa6a0003d4z7h2al61t2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/" data-id="cixd179f50007a4z76hwga3bd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -354,7 +353,7 @@ You can’t wri">
 
             
     
-        <a href="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/">Comments</a>
+        <a href="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/">Comments</a>
     
 
         </footer>
@@ -363,10 +362,19 @@ You can’t wri">
         
 <nav id="article-nav">
     
+        <a href="/2016/12/31/Stats-Calculator-with-TDD-Part-2/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Stats Calculator with TDD Part 2
+                
+            </div>
+        </a>
+    
     
         <a href="/2016/12/18/Test-Driven-Development-Introduction/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">测试驱动开发简介</div>
+            <div class="article-nav-title">Test Driven Development Introduction</div>
         </a>
     
 </nav>
@@ -401,6 +409,15 @@ You can’t wri">
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/TDD/">TDD</a></p>
+                            <p class="item-title"><a href="/2016/12/31/Stats-Calculator-with-TDD-Part-2/" class="title">Stats Calculator with TDD Part 2</a></p>
+                            <p class="item-date"><time datetime="2016-12-31T08:27:13.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TDD/">TDD</a></p>
                             <p class="item-title"><a href="/2016/12/19/Stats-Calculator-with-TDD-Part-1/" class="title">Stats Calculator with TDD Part 1</a></p>
                             <p class="item-date"><time datetime="2016-12-19T15:19:42.000Z" itemprop="datePublished">2016-12-19</time></p>
                         </div>
@@ -410,7 +427,7 @@ You can’t wri">
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/TDD/">TDD</a></p>
-                            <p class="item-title"><a href="/2016/12/18/Test-Driven-Development-Introduction/" class="title">测试驱动开发简介</a></p>
+                            <p class="item-title"><a href="/2016/12/18/Test-Driven-Development-Introduction/" class="title">Test Driven Development Introduction</a></p>
                             <p class="item-date"><time datetime="2016-12-18T03:29:15.000Z" itemprop="datePublished">2016-12-18</time></p>
                         </div>
                     </li>
@@ -433,7 +450,7 @@ You can’t wri">
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/TDD/">TDD</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/TDD/">TDD</a><span class="category-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -442,7 +459,7 @@ You can’t wri">
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -451,7 +468,7 @@ You can’t wri">
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Testing/">Testing</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XP/">XP</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Testing/">Testing</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XP/">XP</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -501,7 +518,7 @@ You can’t wri">
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/';
+            this.page.url = 'http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/';
         
         this.page.identifier = 'Stats-Calculator-with-TDD-Part-1';
     };
