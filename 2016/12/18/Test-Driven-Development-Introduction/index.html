@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang=en>
 <head>
     <meta charset="utf-8">
     
-    <title>测试驱动开发简介 | Agile</title>
+    <title>Test Driven Development Introduction | Agile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Test Driven Development (测试驱动开发/TDD) 由Kent Beck发扬光大的极限编程实践之一。TDD提倡通过极短重复的开发循环, 演进代码设计，并达到满足需求目的。">
+    <meta name="description" content="Test Driven Development (TDD) is one of the eXtreme Programming (XP) practices developed by Kent Beck.It promotes repetitions of short coding cycles, to evolve the solutions with new requirements.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试驱动开发简介">
-<meta property="og:url" content="http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/index.html">
+<meta property="og:title" content="Test Driven Development Introduction">
+<meta property="og:url" content="http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/index.html">
 <meta property="og:site_name" content="Agile">
-<meta property="og:description" content="Test Driven Development (测试驱动开发/TDD) 由Kent Beck发扬光大的极限编程实践之一。TDD提倡通过极短重复的开发循环, 演进代码设计，并达到满足需求目的。">
-<meta property="og:image" content="http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/tdd.mantra.png">
-<meta property="og:updated_time" content="2016-12-31T11:44:59.587Z">
+<meta property="og:description" content="Test Driven Development (TDD) is one of the eXtreme Programming (XP) practices developed by Kent Beck.It promotes repetitions of short coding cycles, to evolve the solutions with new requirements.">
+<meta property="og:image" content="http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/tdd.mantra.png">
+<meta property="og:updated_time" content="2016-12-31T12:20:59.118Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试驱动开发简介">
-<meta name="twitter:description" content="Test Driven Development (测试驱动开发/TDD) 由Kent Beck发扬光大的极限编程实践之一。TDD提倡通过极短重复的开发循环, 演进代码设计，并达到满足需求目的。">
-<meta name="twitter:image" content="http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/tdd.mantra.png">
+<meta name="twitter:title" content="Test Driven Development Introduction">
+<meta name="twitter:description" content="Test Driven Development (TDD) is one of the eXtreme Programming (XP) practices developed by Kent Beck.It promotes repetitions of short coding cycles, to evolve the solutions with new requirements.">
+<meta name="twitter:image" content="http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/tdd.mantra.png">
     
 
     
@@ -207,7 +207,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            测试驱动开发简介
+            Test Driven Development Introduction
         </h1>
     
 
@@ -242,21 +242,21 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p><strong>Test Driven Development</strong> (<strong>测试驱动开发/TDD</strong>) 由<a href="https://en.wikipedia.org/wiki/Kent_Beck" target="_blank" rel="external">Kent Beck</a>发扬光大的极限编程实践之一。<br>TDD提倡通过极短重复的开发循环, 演进代码设计，并达到满足需求目的。</p>
+            <p><strong>Test Driven Development</strong> (<strong>TDD</strong>) is one of the eXtreme Programming (XP) practices developed by <a href="https://en.wikipedia.org/wiki/Kent_Beck" target="_blank" rel="external">Kent Beck</a>.<br>It promotes repetitions of short coding cycles, to evolve the solutions with new requirements.</p>
 <a id="more"></a>
-<h2 id="测试驱动开发的准则"><a href="#测试驱动开发的准则" class="headerlink" title="测试驱动开发的准则"></a>测试驱动开发的准则</h2><p>TDD的准则有3个步骤：<em>red/green/refactor</em>：</p>
+<h2 id="The-Coding-Cycle-of-TDD"><a href="#The-Coding-Cycle-of-TDD" class="headerlink" title="The Coding Cycle of TDD"></a>The Coding Cycle of TDD</h2><p>TDD has a “mantra” with 3 steps, <em>red/green/refactor</em>:</p>
 <ul>
-<li>在编写任何生产代码前，编写最简单的失败的测试用例 (<em>red</em>)。</li>
-<li>编写最少的生产代码以通过上一步的失败测试 (<em>green</em>)</li>
-<li>重构测试用例或生产代码 (<em>Refactor</em>)</li>
+<li>Write a simplest failing test case (hence <em>red</em>), before writing any production code.</li>
+<li>Write minimal production code possible to pass the failing test case (<em>green</em>)</li>
+<li><em>Refactor</em> test case or production code</li>
 </ul>
 <p><img src="/2016/12/18/Test-Driven-Development-Introduction/tdd.mantra.png" alt="TDD Mantra"></p>
-<h2 id="测试驱动开发的优点"><a href="#测试驱动开发的优点" class="headerlink" title="测试驱动开发的优点"></a>测试驱动开发的优点</h2><h3 id="更优的设计"><a href="#更优的设计" class="headerlink" title="更优的设计"></a>更优的设计</h3><p>众所周知，紧耦合的代码难以测试。既然我们在实施TDD时总是先写测试再完成生产代码，那么我们的代码总是可测的。这意味着通过TDD的方式，较难写出紧耦合的代码。</p>
-<h3 id="更少的debug花费"><a href="#更少的debug花费" class="headerlink" title="更少的debug花费"></a>更少的debug花费</h3><p>实施TDD时，我们总是以极短的<em>red/green/refactor</em>循环编写代码。如果中途某一步出现漏洞，那离上一次测试通过并不久，出现漏洞的代码范围有限，很容易定位问题，很少出现需要花费大量时间debug的情况。</p>
-<h3 id="消除破坏既有代码行为的恐惧"><a href="#消除破坏既有代码行为的恐惧" class="headerlink" title="消除破坏既有代码行为的恐惧"></a>消除破坏既有代码行为的恐惧</h3><p>通过TDD的方式编写的代码通常有很高的测试覆盖率 (90%以上很容易实现)，因为在写生产代码前总会先写测试。在这样的高代码覆盖率下，因为疏忽而破坏既有代码行为的可能性是比较低的。</p>
-<h3 id="持续改善代码质量"><a href="#持续改善代码质量" class="headerlink" title="持续改善代码质量"></a>持续改善代码质量</h3><p>在消除破坏代码行为的恐惧后，我们更有可能通过重构来改善我们的代码质量。不然，我们会担心重构导致漏洞，而给自己增加不必要的麻烦。</p>
-<h3 id="测试用例作为文档"><a href="#测试用例作为文档" class="headerlink" title="测试用例作为文档"></a>测试用例作为文档</h3><p>修改代码时，我们必定更新测试用例，但我们未必会同时更新文档，事实上很多时候文档都是过时的。高质量的测试用例是最好形式的文档，因为他们永不过时，而且对代码应用场景的描述最精确。</p>
-<h2 id="如何开始实施"><a href="#如何开始实施" class="headerlink" title="如何开始实施?"></a>如何开始实施?</h2><p>测试驱动开发简单易懂，却难以精通。提高我们TDD技能的最好方式是通过不断的练习。网上有很多这样名为<a href="https://github.com/garora/TDD-Katas" target="_blank" rel="external"><em>Kata</em></a>的练习题，通过这些题我们可以更快的掌握TDD的技巧。<br>下一篇文章里，我们用最简单的Kata，<a href="https://github.com/garora/TDD-Katas#calc-stats" target="_blank" rel="external">Calc Stats</a> 来练习使用TDD的方式编程。</p>
+<h2 id="The-Benefit-of-TDD"><a href="#The-Benefit-of-TDD" class="headerlink" title="The Benefit of TDD"></a>The Benefit of TDD</h2><h3 id="Better-design"><a href="#Better-design" class="headerlink" title="Better design"></a>Better design</h3><p>As we know, tightly coupled code are hard to test. Since we always write tests before any production code, our code are always testable,<br>meaning it is hard to write tightly coupled code with TDD.</p>
+<h3 id="Much-less-code-debugging"><a href="#Much-less-code-debugging" class="headerlink" title="Much less code debugging"></a>Much less code debugging</h3><p>We are working in short cycles of <em>red/green/refactor</em> with TDD. There won’t be much code written after the previous time our tests passed.<br>That limits the scope of the bug we introduced and makes it very easy to spot.</p>
+<h3 id="No-fear-to-break-code"><a href="#No-fear-to-break-code" class="headerlink" title="No fear to break code"></a>No fear to break code</h3><p>TDD tends to produce code with very high test coverage (90%+ is very easy to achieve), since tests are always written first.<br>It’s much less likely to break the code accidentally with such high code coverage.</p>
+<h3 id="Continuous-code-improvement-with-refactoring"><a href="#Continuous-code-improvement-with-refactoring" class="headerlink" title="Continuous code improvement with refactoring"></a>Continuous code improvement with refactoring</h3><p>Tests are vital to refactoring. We are more likely to improve our code quality with refactoring, because the fear to break code is eliminated with tests.<br>Or, nobody will touch bad code. We are afraid that the bad code will be ours, if we break it.</p>
+<h3 id="Test-case-as-documentation"><a href="#Test-case-as-documentation" class="headerlink" title="Test case as documentation"></a>Test case as documentation</h3><p>If written well, test cases are the best documentation, because they are always up to date and describe the exact scenarios on how to use the production code.</p>
+<h2 id="How-To-Start"><a href="#How-To-Start" class="headerlink" title="How To Start?"></a>How To Start?</h2><p>TDD is an easy-to-learn but hard-to-master skill. The best way to improve our skill on TDD is through practices.<br>There are many exercises called <a href="https://github.com/garora/TDD-Katas" target="_blank" rel="external"><em>Kata</em>s</a>, which can help accelerate our learning process.<br>I will use one of the simplest Kata, <a href="https://github.com/garora/TDD-Katas#calc-stats" target="_blank" rel="external">Calc Stats</a> to demonstrate how to get started with TDD in my next post.</p>
 
         
         </div>
@@ -267,7 +267,7 @@
 
 </div>
 
-    <a data-url="http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/" data-id="cixd74bb10007lcz7t85m2yyr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/" data-id="cixd760gz0004ccz7k1rvbopo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -335,7 +335,7 @@
 
             
     
-        <a href="http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/">Comments</a>
+        <a href="http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/">Comments</a>
     
 
         </footer>
@@ -409,7 +409,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/TDD/">TDD</a></p>
-                            <p class="item-title"><a href="/2016/12/18/Test-Driven-Development-Introduction/" class="title">测试驱动开发简介</a></p>
+                            <p class="item-title"><a href="/2016/12/18/Test-Driven-Development-Introduction/" class="title">Test Driven Development Introduction</a></p>
                             <p class="item-date"><time datetime="2016-12-18T03:29:15.000Z" itemprop="datePublished">2016-12-18</time></p>
                         </div>
                     </li>
@@ -441,7 +441,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -500,7 +500,7 @@
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/';
+            this.page.url = 'http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/';
         
         this.page.identifier = 'Test-Driven-Development-Introduction';
     };
