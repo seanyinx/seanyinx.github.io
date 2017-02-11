@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang=zh>
 <head>
     <meta charset="utf-8">
     
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta property="og:type" content="website">
 <meta property="og:title" content="Agile">
-<meta property="og:url" content="http://seanyinx.github.io/index.html">
+<meta property="og:url" content="http://seanyinx.coding.me/index.html">
 <meta property="og:site_name" content="Agile">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Agile">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/freezeframe_styles.min.css">
 
     <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
@@ -236,7 +237,7 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><p>We implemented finding minimum value from a sequence of integers. Finding maximum and average is very straightforward and similar to what we have done in my previous post. So I will just put the code here directly to keep us from being bored.</p></p>
+            <p><p>在上一篇我们实现了从数列中查找最小值，而最大值和平均值的查找跟最小查找非常相似，所以这里直接给出已完成的测试和生产代码。</p></p>
             <p class="article-more-link">
                 <a href="/2016/12/31/Stats-Calculator-with-TDD-Part-2/#more">Read More</a>
             </p>
@@ -249,7 +250,7 @@
 
 </div>
 
-    <a data-url="http://seanyinx.github.io/2016/12/31/Stats-Calculator-with-TDD-Part-2/" data-id="cixd760gu0003ccz7emb39cwo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://seanyinx.coding.me/2016/12/31/Stats-Calculator-with-TDD-Part-2/" data-id="ciz0p1oh40004d8z7474os6pc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -317,7 +318,7 @@
 
             
     
-        <a href="http://seanyinx.github.io/2016/12/31/Stats-Calculator-with-TDD-Part-2/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.github.io/2016/12/31/Stats-Calculator-with-TDD-Part-2/">Comments</a>
+        <a href="http://seanyinx.coding.me/2016/12/31/Stats-Calculator-with-TDD-Part-2/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.coding.me/2016/12/31/Stats-Calculator-with-TDD-Part-2/">Comments</a>
     
 
         </footer>
@@ -369,13 +370,13 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><p>I am going to demonstrate how to complete Stats Calculator with Test Driven Development.<br>Before we start, let me introduce you the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">three laws of TDD</a> by <a href="https://en.wikipedia.org/wiki/Robert_Cecil_Martin">Robert Martin</a>.</p>
+            <p><p>下面我们来一起通过TDD完成Stats Calculator。在开始前，我们先来看看<a href="https://en.wikipedia.org/wiki/Robert_Cecil_Martin">Robert Martin</a>的<a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">three laws of TDD</a>：</p>
 <ol>
-<li>You can’t write any production code until you have first written a failing unit test.</li>
-<li>You can’t write more of a unit test than is sufficient to fail, and not compiling is failing.</li>
-<li>You can’t write more production code than is sufficient to pass the currently failing unit test.</li>
+<li>You can’t write any production code until you have first written a failing unit test. (不能在写完一个失败的测试前，编写任何生产代码)</li>
+<li>You can’t write more of a unit test than is sufficient to fail, and not compiling is failing. (不能编程超过一个失败的测试，不能编译也算失败)</li>
+<li>You can’t write more production code than is sufficient to pass the currently failing unit test. (只能编写足够通过当前失败测试的生产代码)</li>
 </ol>
-<p>It reads unnatural at first, but I hope you will understand better after reading this post.</p></p>
+<p>这些法则读起来可能有些不自然，希望我们通过这次练习能更好理解其意义。</p></p>
             <p class="article-more-link">
                 <a href="/2016/12/19/Stats-Calculator-with-TDD-Part-1/#more">Read More</a>
             </p>
@@ -388,7 +389,7 @@
 
 </div>
 
-    <a data-url="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/" data-id="cixd760h80007ccz7g1i41md3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/" data-id="ciz0p1ogy0002d8z7p0r5wulu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -456,7 +457,7 @@
 
             
     
-        <a href="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.github.io/2016/12/19/Stats-Calculator-with-TDD-Part-1/">Comments</a>
+        <a href="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.coding.me/2016/12/19/Stats-Calculator-with-TDD-Part-1/">Comments</a>
     
 
         </footer>
@@ -474,7 +475,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2016/12/18/Test-Driven-Development-Introduction/">Test Driven Development Introduction</a>
+            <a class="article-title" href="/2016/12/18/Test-Driven-Development-Introduction/">测试驱动开发简介</a>
         </h1>
     
 
@@ -508,7 +509,7 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><p><strong>Test Driven Development</strong> (<strong>TDD</strong>) is one of the eXtreme Programming (XP) practices developed by <a href="https://en.wikipedia.org/wiki/Kent_Beck">Kent Beck</a>.<br>It promotes repetitions of short coding cycles, to evolve the solutions with new requirements.</p></p>
+            <p><p><strong>Test Driven Development</strong> (<strong>测试驱动开发/TDD</strong>) 由<a href="https://en.wikipedia.org/wiki/Kent_Beck">Kent Beck</a>发扬光大的极限编程实践之一。<br>TDD提倡通过极短重复的开发循环, 演进代码设计，并达到满足需求目的。</p></p>
             <p class="article-more-link">
                 <a href="/2016/12/18/Test-Driven-Development-Introduction/#more">Read More</a>
             </p>
@@ -521,7 +522,7 @@
 
 </div>
 
-    <a data-url="http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/" data-id="cixd760gz0004ccz7k1rvbopo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/" data-id="ciz0p1ohf0007d8z7m0gizyil" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -589,7 +590,7 @@
 
             
     
-        <a href="http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.github.io/2016/12/18/Test-Driven-Development-Introduction/">Comments</a>
+        <a href="http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.coding.me/2016/12/18/Test-Driven-Development-Introduction/">Comments</a>
     
 
         </footer>
@@ -642,7 +643,7 @@
 
 </div>
 
-    <a data-url="http://seanyinx.github.io/2016/12/18/Hello-World/" data-id="cixd760gn0001ccz7r343pyt3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://seanyinx.coding.me/2016/12/18/Hello-World/" data-id="ciz0p1ogr0000d8z7z7emk0k0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -710,7 +711,7 @@
 
             
     
-        <a href="http://seanyinx.github.io/2016/12/18/Hello-World/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.github.io/2016/12/18/Hello-World/">Comments</a>
+        <a href="http://seanyinx.coding.me/2016/12/18/Hello-World/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://seanyinx.coding.me/2016/12/18/Hello-World/">Comments</a>
     
 
         </footer>
@@ -751,7 +752,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/TDD/">TDD</a></p>
-                            <p class="item-title"><a href="/2016/12/18/Test-Driven-Development-Introduction/" class="title">Test Driven Development Introduction</a></p>
+                            <p class="item-title"><a href="/2016/12/18/Test-Driven-Development-Introduction/" class="title">测试驱动开发简介</a></p>
                             <p class="item-date"><time datetime="2016-12-18T03:29:15.000Z" itemprop="datePublished">2016-12-18</time></p>
                         </div>
                     </li>
@@ -783,7 +784,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -829,7 +830,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2016 Sean Yin<br>
+            &copy; 2017 Sean Yin<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a><br/>
         </div>
         <div id="copyright-info" class="inner">
@@ -872,6 +873,7 @@
 
 
 <!-- Custom Scripts -->
+<script src="/js/freezeframe.pkgd.js"></script>
 <script src="/js/main.js"></script>
 
     </div>

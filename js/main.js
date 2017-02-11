@@ -60,4 +60,5 @@
         });
     }
 
+    $('.managed-gif').freezeframe();
 })(jQuery);
